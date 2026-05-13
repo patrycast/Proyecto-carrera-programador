@@ -6,12 +6,12 @@ import { getFirestore } from "firebase/firestore";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyCY1wAfRCTyX7BN_AtABF33h1zffhvnFi4",
-  authDomain: "backgym-91d57.firebaseapp.com",
-  projectId: "backgym-91d57",
-  storageBucket: "backgym-91d57.firebasestorage.app",
-  messagingSenderId: "1042548855879",
-  appId: "1:1042548855879:web:9911e25558e8ee083ecd62"
+  apiKey: import.meta.env.API_KEY,
+  authDomain: import.meta.env.AUTH_DOMAIN,
+  projectId: import.meta.env.PROJECT_ID,
+  storageBucket: import.meta.env.STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.MESSAGING_SENDER_ID,
+  appId: import.meta.env.APP_ID
 };
 
 // Initialize Firebase
