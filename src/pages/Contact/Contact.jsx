@@ -6,6 +6,9 @@ import { validationSchema } from './formik/validation-schema';
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
 
+import { addDoc , collection, serverTimestamp} from 'firebase/firestore';
+import { db } from "../../firebase/config";
+
 
 
 export const Contact = () => {
@@ -13,14 +16,27 @@ export const Contact = () => {
     const { handleSubmit, getFieldProps, errors, touched} = useFormik({
     initialValues: initialValues,
     validationSchema: validationSchema,
-    onSubmit: (values) => {
-      console.log(values)
-      {values ? (
+    onSubmit: async (values) => {
+      try{
+        await addDoc(collection(db, "contact"), {
+          name: values.name,
+          lastname: values.lastname,
+          email: values.email,
+          cellphone: values.cellphone,
+          message: values.message,
+          createdAt: serverTimestamp(),
+        })
+      
+      // console.log(values)
+
         toast("Consulta enviada correctamente"),
+
         setTimeout(() => {
-        navigate("/");}, 4000) ) : 
-        (toast("Error al enviar la consulta")) }
+        navigate("/");}, 4000) 
+    }   catch (error) {
+        toast("Error al enviar la consulta" + error.message);
     }
+  }
   })
 
   return (

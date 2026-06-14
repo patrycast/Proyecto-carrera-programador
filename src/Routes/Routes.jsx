@@ -9,6 +9,10 @@ import { NotFound } from "../pages/NotFound/NotFound"
 import { Servicios } from "../pages/Servicios/Servicios"
 import { CompleteOrder } from "../pages/CompleteOrder/CompleteOrder"
 import { Felicitaciones } from "../pages/Felicitaciones/Felicitaciones"
+import ProtectedRoute from "./ProtectedRoute"
+import { Orders } from "../pages/Orders/Orders"
+import { Profile } from "../pages/Profile/Profile"
+
 
 export const Routes = () => {
   return (
@@ -19,8 +23,30 @@ export const Routes = () => {
         <Route path="/contact" element={<Contact />} />
         <Route path="/login" element={ <Login/>}/>
         <Route path="/register" element={ <Register/>}/>
-        <Route path="/completeOrder" element={ <CompleteOrder/>}/>
         <Route path="/felicitaciones" element={ <Felicitaciones/>}/>
+
+        <Route path="/orders" element={ <Orders/>}/>
+        <Route path="/profile" element={ <Profile/>}/>
+
+        <Route path="/completeOrder" element={ 
+          <ProtectedRoute redirectTo="/login"> 
+            <CompleteOrder/> 
+          </ProtectedRoute>
+        }/>
+
+
+        <Route path="/orders" element={
+          <ProtectedRoute redirectTo="/login">
+            <Orders/>
+          </ProtectedRoute>
+        }/>
+
+        <Route path="/profile" element={
+          <ProtectedRoute redirectTo="/login">
+            <Profile/>
+          </ProtectedRoute>
+        }/>
+
 
         <Route path="*" element={ <NotFound/>}/>
 

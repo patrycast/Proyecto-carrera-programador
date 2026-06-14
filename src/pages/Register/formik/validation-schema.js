@@ -1,6 +1,7 @@
 import * as Yup from "yup";
 
-const passwordRegex= /^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6}$/;
+// const passwordRegex= /^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6}$/;
+const passwordRegex= /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/;
 
 export const validationSchema= Yup.object({
     name: Yup.string()
@@ -16,6 +17,6 @@ export const validationSchema= Yup.object({
     .required("El email es requerido"),
     
     password: Yup.string()
-    .matches(passwordRegex, "La contraseña debe tener al menos 6 caracteres, una mayúscula, un número y un carácter especial")
+    .matches(passwordRegex, "La contraseña debe tener al menos 6 caracteres, una mayúscula, una minúscula, un número y un carácter especial")
     .required("La contraseña es requerida")
 })

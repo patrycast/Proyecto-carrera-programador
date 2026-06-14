@@ -6,6 +6,7 @@ import { BsPlusLg } from "react-icons/bs";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../redux/slices/cartSlice";
 import { removeFromCart } from "../../redux/slices/cartSlice";
+import { images } from "../../data/images"
 
 export const CardCompleteOrder = ({item}) => {
     const { id, img, title, desc, price, quantity } = item;
@@ -21,7 +22,10 @@ export const CardCompleteOrder = ({item}) => {
 
   return (
      <CompleteOrderContainer>
-      <img src={img}  />
+      {/* <img src={img}  /> */}
+
+      <img style={{width: "20%", height: "20%", marginRight:"20px",  borderRadius: "10px"}} src={images[img]}  />
+
 {/* alt={title} */}
         <CompleteOrderWrapper>
             <TitleStyled>{title}</TitleStyled>

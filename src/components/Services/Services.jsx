@@ -9,7 +9,7 @@ export const Services = () => {
   const { items, loading, error } = useSelector((state) => state.services);
 
   useEffect(() => {
-    dispatch(fetchServices()); // 👈 ahora solo despachás el thunk
+    dispatch(fetchServices()); 
   }, [dispatch]);
 
   if (loading) return <p>Cargando servicios...</p>;

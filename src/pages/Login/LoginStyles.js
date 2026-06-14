@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-// import { Form as FormikForm } from 'formik';
+import loginImg from "../../assets/img/login.png";
 
 export const LoginContainer = styled.section` 
   width: 100%;
@@ -7,16 +7,36 @@ export const LoginContainer = styled.section`
   height: auto;
   height: 100vh;
   margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  color: var(--white); 
+  color: var(--white);  
+  padding: 2.6rem;
   
   h2{
     margin-top: 100px;
     padding: 1rem;
     text-align: center;
   }
+`;
+
+export const ContainerImgForm = styled.div`
+  display: flex;
+  justify-content:center;
+  margin-left: 200px;
+  border: 1px solid #444;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  border-radius: 10px;
+  padding: 1rem;
+`;
+
+export const ContainerImg= styled.div`
+  background-image: url(${loginImg});
+  background-size: cover;
+  background-position: center;
+  height: 180px;
+  width:180px;
+ border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  filter: grayscale(100%);
+ 
 `;
 
 export const Form = styled.form`

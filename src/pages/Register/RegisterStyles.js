@@ -2,19 +2,28 @@ import styled from 'styled-components';
 
 
 export const RegisterContainer = styled.section`
+  height: 36rem;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 10px;
-  margin-top: 100px;
   color: var(--white);
 
   h2{
     padding: 1rem;
   }
 `;
-
+export const ContainerImgForm = styled.div`
+  display: flex;
+  justify-content:center;
+  margin-left: 200px;
+  border: 1px solid #444;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  border-radius: 10px;
+  padding: 3rem;
+`;
 
 
 export const FormStyled = styled.form`
