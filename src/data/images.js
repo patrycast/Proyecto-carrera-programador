@@ -4,6 +4,7 @@
  import clasesPersonalizadas from "../assets/img/clasesPersonalizadas.png";
  import yoga from "../assets/img/yoga.png";
  import evaluacionFisica from "../assets/img/evaluacionFisica.png";
+ import caminata from "../assets/img/caminata.png";
 
 
  export const images = {
@@ -12,5 +13,6 @@
   entrenamientoOnline,
   clasesPersonalizadas,
   yoga,
-  evaluacionFisica
+  evaluacionFisica, 
+  caminata
  };

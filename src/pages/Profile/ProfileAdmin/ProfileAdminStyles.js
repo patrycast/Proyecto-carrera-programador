@@ -7,7 +7,7 @@ export const AdminContainer = styled.div`
   color: #fff;
 `;
 
-export const Sidebar = styled.aside`
+export const SidebarAdmin = styled.aside`
   width: 260px;
   background: #1c1c1c;
   border-right: 1px solid #333;
@@ -26,12 +26,12 @@ export const Sidebar = styled.aside`
   }
 `;
 
-export const Menu = styled.ul`
+export const MenuBtns = styled.ul`
   list-style: none;
   padding: 0;
 `;
 
-export const MenuItem = styled.li`
+export const MenuItemBtn = styled.li`
   display: flex;
   align-items: center;
   gap: 12px;
@@ -40,7 +40,7 @@ export const MenuItem = styled.li`
   border-radius: 12px;
   cursor: pointer;
   color: ${({ active }) => (active ? "#fff" : "#bdbdbd")};
-  background: ${({ active }) => (active ? "#234a87" : "transparent")};
+  background: ${({ active }) => (active ? "#2658a7" : "transparent")};
   transition: 0.3s;
 
   &:hover {
@@ -54,7 +54,7 @@ export const MenuItem = styled.li`
   }
 `;
 
-export const Content = styled.main`
+export const ContentSection = styled.main`
   flex: 1;
   padding: 40px;
 
