@@ -11,7 +11,7 @@ import {
   OrderItems, OrderItem, OrderItemImg, OrderItemInfo, OrderActions,
   EditButton, DeleteButton, Title, EmptyMessage
 } from "./OrderAdminStyles";
-// import { EditOrderModal } from "./EditOrderModal/EditOrderModal";
+import { EditOrderModal } from "./EditOrderModal/EditOrderModal";
 
 
 const formatDate = (createdAt) => {
@@ -67,7 +67,12 @@ export const OrderAdmin = () => {
         fetchOrders();
         }, []);
 
-  const handleDelete = async (orderId) => {
+  const handleDelete = async (orderId, clientName) => {
+     const confirmDelete = window.confirm(
+    `¿Estás seguro que querés eliminar el pedido de "${clientName}"? Esta acción no se puede deshacer.`
+  );
+
+  if (!confirmDelete) return;
     try {
       await deleteDoc(doc(db, "orders", orderId));
       setOrders((prev) => prev.filter((o) => o.id !== orderId));
@@ -120,7 +125,7 @@ export const OrderAdmin = () => {
                 <EditButton onClick={() => setSelectedOrder(order)}>
                   <MdEdit /> Editar
                 </EditButton>
-                <DeleteButton onClick={() => handleDelete(order.id)}>
+                <DeleteButton onClick={() => handleDelete(order.id, order.details?.name)}>
                   <IoTrashOutline /> Eliminar
                 </DeleteButton>
               </OrderActions>
