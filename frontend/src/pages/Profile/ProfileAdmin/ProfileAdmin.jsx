@@ -9,6 +9,7 @@ import { AdminContainer, SidebarAdmin, MenuBtns, MenuItemBtn, ContentSection, He
   import { ServiceAdmin } from "./ServiceAdmin/ServiceAdmin";
   import { UserAdmin } from "./UserAdmin/UserAdmin";
   import { OrderAdmin } from "./OrderAdmin/OrderAdmin";
+  import { ContactAdmin } from "./ContactAdmin/ContactAdmin";
 
 
 export const ProfileAdmin = () => {
@@ -46,7 +47,7 @@ export const ProfileAdmin = () => {
         {activeSection === "servicios" && <ServiceAdmin />}
         {activeSection === "usuarios" && <UserAdmin />}
         {activeSection === "pedidos" && <OrderAdmin />}
-        {activeSection === "mensajes" && <h2>Mensajes</h2>}
+        {activeSection === "mensajes" && <ContactAdmin />}
       </ContentSection>
 
     </AdminContainer>
