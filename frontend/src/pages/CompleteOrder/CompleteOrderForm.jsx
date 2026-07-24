@@ -9,7 +9,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { clearCart } from "../../redux/slices/cartSlice";
 import { addOrder } from "../../redux/slices/ordersSlice";
 
-import { addDoc, collection, doc, updateDoc, serverTimestamp } from "firebase/firestore"; //serverTimestamp
+import { addDoc, collection, doc, updateDoc, serverTimestamp } from "firebase/firestore"; 
 import { db } from "../../firebase/config";
 
 
@@ -25,7 +25,6 @@ export const CompleteOrderForm = ({ cartItems, totalPrice }) => {
       initialValues={initialValues}
       validationSchema={validationSchema}
       onSubmit={ async (values) => {
-        console.log("values", values)
       
         try {
           //creo la orden en firestore

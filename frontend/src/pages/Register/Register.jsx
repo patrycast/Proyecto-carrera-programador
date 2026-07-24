@@ -13,15 +13,17 @@ import { getAuth, createUserWithEmailAndPassword, updateProfile, validatePasswor
 import  {app } from '../../firebase/config';
 import { doc, setDoc } from "firebase/firestore";
 import { db } from '../../firebase/config';
-import { useDispatch } from 'react-redux';
-import { setUser } from '../../redux/slices/user/userSlice';
+// import { useDispatch } from 'react-redux';
+// import { setUser } from '../../redux/slices/user/userSlice';
+import { signOut } from 'firebase/auth';
 
 
 export const Register = () => {
     // useRedirect("/login");
   const navigate = useNavigate();
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   const auth = getAuth(app);
+
 
   // const { handleSubmit, getFieldProps, errors, touched} = useFormik({
   //   initialValues: initialValues,
@@ -84,7 +86,6 @@ export const Register = () => {
             // validar password con Firebase
         const isValidPassword =await validateFirebasePassword(values.password);
         
-
         if (!isValidPassword) return;
         
         //creo usuario
@@ -103,17 +104,18 @@ export const Register = () => {
         email: values.email,
         role: "user",
       })
+      await signOut(auth);
 
 
       // guardo en redux
-        dispatch(
-          setUser({
-            uid: user.uid,
-            email: user.email,
-            displayName: user.displayName,
-            role: "user",
-          })
-        );
+        // dispatch(
+        //   setUser({
+        //     uid: user.uid,
+        //     email: user.email,
+        //     displayName: user.displayName,
+        //     role: "user",
+        //   })
+        // );
 
         toast.success("¡Registro exitoso! Redirigiendo al Login...")
 

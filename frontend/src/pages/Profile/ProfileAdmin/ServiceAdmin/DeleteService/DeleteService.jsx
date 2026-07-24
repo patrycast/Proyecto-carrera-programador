@@ -10,7 +10,7 @@ import { db } from "../../../../../firebase/config";
 export const DeleteService = ({ service, onClose }) => {
   const dispatch = useDispatch();
 
-//   ------------------firebaase----------------------
+//   ------------------firebase----------------------
   const handleDelete = async () => {
 
     try {

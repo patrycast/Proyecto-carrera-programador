@@ -19,20 +19,17 @@ export const EditOrderModal = ({ order, onClose, onUpdate }) => {
     );
   };
 
-//   const handleRemoveItem = (itemId) => {
-//     setItems((prev) => prev.filter((item) => item.id !== itemId));
-//   };
 
-    const handleRemoveItem = (itemId, itemTitle) => {  alert(`Intentando eliminar: ${itemTitle}`);
+    // const handleRemoveItem = (itemId, itemTitle) => {  alert(`Intentando eliminar: ${itemTitle}`);
 
-        const confirmDelete = window.confirm(
-            `¿Estás seguro que querés eliminar "${itemTitle}" de este pedido?`
-        );
+    //     const confirmDelete = window.confirm(
+    //         `¿Estás seguro que querés eliminar "${itemTitle}" de este pedido?`
+    //     );
 
-        if (!confirmDelete) return;
+    //     if (!confirmDelete) return;
 
-        setItems((prev) => prev.filter((item) => item.id !== itemId));
-    };
+    //     setItems((prev) => prev.filter((item) => item.id !== itemId));
+    // };
 
   const calculateTotal = (itemsList) =>
     itemsList.reduce((acc, item) => acc + item.price * item.quantity, 0);
@@ -105,9 +102,9 @@ export const EditOrderModal = ({ order, onClose, onUpdate }) => {
                 ${(item.price * item.quantity).toLocaleString("es-AR")}
               </ItemSubtotal>
 
-              <RemoveButton type="button" onClick={() => handleRemoveItem(item.id, item.title)}>
+              {/* <RemoveButton type="button" onClick={() => handleRemoveItem(item.id, item.title)}>
                 <MdClose />
-              </RemoveButton>
+              </RemoveButton> */}
             </ItemRow>
           ))}
         </ItemsList>

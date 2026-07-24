@@ -162,16 +162,3 @@ export const RouterLink = styled(Link)`
     transition: all 0.3s ease-in-out;
   }
 `;
-
-// export const GreetingText = styled.p`
-//   color: #fff; /* O el color que prefieras para el texto */
-//   font-size: 15px;
-//   font-weight: 500;
-//   margin: 0;
-//   text-transform: capitalize; 
-  
-
-//   &:hover {
-//     color: #ff3333; 
-//   }
-// `;

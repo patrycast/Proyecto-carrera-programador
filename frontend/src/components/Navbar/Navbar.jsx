@@ -63,15 +63,13 @@ export const Navbar = () => {
                         <UserContainer>
                             <UserInfo onClick={() => setOpenMenu(!openMenu)}>
                             <LoginIcon />
-                            {/* <span>Hola {user.displayName}</span>  */}
-                            {/* {user?.displayName && <span>Hola {user.displayName}</span>} */}
-                            <span>
-                                {user && user.displayName ? `Hola ${user.displayName}` :  <p style={{ marginRight: '10px' }}>Hola Admin</p>}
-                            </span>
-
-                            {/* <GreetingText> */}
-        {/* {user && user.displayName ? `Hola ${user.displayName}` : "Hola"}
-      </GreetingText> */}
+                            {/* <span> */}
+                                {user && user.displayName ? (
+                                    <span>Hola {user.displayName}</span>
+                                    ) : (
+                                    <p>Hola Admin</p>
+                                    )}
+                            {/* </span> */}
                             </UserInfo>
 
                             {openMenu && (

@@ -31,10 +31,9 @@ export const Orders =  () => {
             id: doc.id,
             ...doc.data(),
         }))
-console.log("Orders", orders);
+
          setUserOrders(orders);
 
-        console.log("Orders",orders);
         }
         catch (error) {
             console.error("Error:", error);

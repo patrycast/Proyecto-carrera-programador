@@ -6,7 +6,6 @@ import { initialValues } from "./formik/initial-values"
 import { validationSchema } from "./formik/validation-schema"
 import { toast } from "react-toastify"
 import { useDispatch, useSelector } from "react-redux";
-// import { Button } from "../../components/shared/Button/Button"
 
 
 import { signInWithEmailAndPassword } from "firebase/auth";
@@ -35,7 +34,6 @@ export const Login = () => {
         );
         
         const user = userCredential.user;
-        const token= await user.getIdToken();
         const snap= await getDoc(doc(db, "users", user.uid));
         
         
@@ -43,12 +41,8 @@ export const Login = () => {
           uid: user.uid,
           email: user.email,
           displayName: user.displayName,
-          token: token,
           role: snap.data().role,
         }));
-        
-        console.log("Usuario logueado:", user);
-        console.log("role:", snap.data()?.role);
         
         toast.success("¡Login exitoso!");
 

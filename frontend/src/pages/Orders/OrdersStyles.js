@@ -18,7 +18,7 @@ export const OrdersContainer = styled.section`
 
 export const CardsWrapper = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); 
   justify-content: center; 
   gap: 2rem;
   width: 40%;

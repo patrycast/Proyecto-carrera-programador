@@ -162,8 +162,8 @@ export const UserAdmin = () => {
 
             <label>Rol en la plataforma</label>
             <SelectField name="role" value={formValues.role} onChange={handleInputChange}>
-              <option value="user">User (Cliente)</option>
-              <option value="admin">Admin (Administrador)</option>
+              <option value="user">Usuario</option>
+              <option value="admin">Administrador</option>
             </SelectField>
 
             <ButtonGroup>
