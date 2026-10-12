@@ -2,7 +2,7 @@ import { ContactContainer, FormStyled, InputStyled, TextAreaStyled, PError } fro
 import { Submit } from '../../components/shared/Submit/Submit';
 import { Field, useFormik } from 'formik';
 import { initialValues } from './Formik/initial-values';
-import { validationSchema } from './formik/validation-schema';
+import { validationSchema } from './Formik/validation-schema';
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
 

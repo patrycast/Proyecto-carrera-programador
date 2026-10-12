@@ -1,5 +1,5 @@
 import { Routes } from "./Routes/Routes"
-import { Navbar } from "./components/navbar/Navbar"
+import { Navbar } from "./components/Navbar/Navbar"
 import { Footer } from "./components/Footer/Footer"
 import { Layout } from "./components/Layout/Layout"
 import { ToastContainer } from "react-toastify";

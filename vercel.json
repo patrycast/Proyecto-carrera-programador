@@ -1,5 +1,7 @@
 {
-
+    "installCommand": "cd frontend && pnpm install",
+    "buildCommand": "cd frontend && pnpm build",
+    "outputDirectory": "frontend/dist",
     "rewrites": [
         {
             "source": "/(.*)",

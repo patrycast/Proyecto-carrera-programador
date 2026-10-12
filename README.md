@@ -19,7 +19,6 @@ de ejercicios y rutinas para adultos mayores. Proyecto en desarrollo activo.
 - Firebase Auth + Firestore
 - Styled Components
 - Formik + Yup
-- Axios
 - React Toastify
 - Vite
 

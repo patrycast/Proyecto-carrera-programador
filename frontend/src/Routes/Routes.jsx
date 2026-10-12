@@ -25,9 +25,6 @@ export const Routes = () => {
         <Route path="/register" element={ <Register/>}/>
         <Route path="/felicitaciones" element={ <Felicitaciones/>}/>
 
-        <Route path="/orders" element={ <Orders/>}/>
-        <Route path="/profile" element={ <Profile/>}/>
-
         <Route path="/completeOrder" element={ 
           <ProtectedRoute redirectTo="/login"> 
             <CompleteOrder/> 
