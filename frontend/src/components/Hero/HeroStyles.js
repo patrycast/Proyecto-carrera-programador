@@ -31,7 +31,16 @@ export const HeroContainer=styled.section`
     /* -------mediaquerys------------- */
     @media( max-width: 990px){
         flex-direction: column;
-        /* padding: 7rem 0; */
+        padding: 110px 1.5rem 2rem 1.5rem;
+        text-align: center;
+    }
+
+    @media( max-width: 480px){
+        padding: 100px 1rem 1.5rem 1rem;
+
+        & h2{
+            font-size: 1.5rem;
+        }
     }
      
 `;
@@ -44,6 +53,7 @@ export const HeroText= styled.div`
     flex-direction: column;
     gap: 10px;
     font-size: 1.3rem;
+    max-width: 100%;
     /* padding: 0 2rem; */
     animation: fadeUp 2s ease forwards;
 
@@ -71,6 +81,13 @@ export const HeroText= styled.div`
 
 export const HeroImg= styled.div`
 animation: fadeRight 2s ease forwards;
+min-width: 0;
+max-width: 100%;
+
+img {
+  display: block;
+  margin: 0 auto;
+}
 
 @keyframes fadeRight {
   from {
@@ -86,6 +103,7 @@ animation: fadeRight 2s ease forwards;
 /* -------mediaquerys------------- */
     @media( max-width: 990px){
         order: 0;
+        width: 100%;
     }
 
 

@@ -23,9 +23,7 @@ export const CardCompleteOrder = ({item}) => {
   return (
      <CompleteOrderContainer>
 
-      <img style={{width: "20%", height: "20%", marginRight:"20px",  borderRadius: "10px"}} src={images[img]}  />
-
-{/* alt={title} */}
+      <img style={{width: "80px", height: "80px", objectFit: "cover", flexShrink: 0, marginRight:"20px", borderRadius: "10px"}} src={images[img]} alt={title} />
         <CompleteOrderWrapper>
             <TitleStyled>{title}</TitleStyled>
             <DescStyled>{desc}</DescStyled>

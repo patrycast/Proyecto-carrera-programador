@@ -17,12 +17,22 @@ padding:0 4rem;
     margin-top: 100px;
     text-align: center;
   }
+
+  @media (max-width: 990px) {
+    padding: 0 1.25rem;
+  }
 `;
 
 export const AboutMeContent = styled.div`
   display: flex;
   justify-content: space-between;
   gap: 20px;
+  width: 100%;
+
+  @media (max-width: 990px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 const fadeInLeft = keyframes`
@@ -48,6 +58,10 @@ export const AboutMeText = styled.div`
   p {
     margin-bottom: 1rem;
     line-height: 1.6;
+  }
+
+  @media (max-width: 990px) {
+    max-width: 100%;
   }
   
   `;
@@ -75,4 +89,10 @@ export const AboutMeImg = styled.img`
   max-width: 400px;
   border-radius: 10px;
   animation: ${fadeInRight} 2.2s ease forwards;
+
+  @media (max-width: 990px) {
+    height: auto;
+    width: 100%;
+    max-width: 400px;
+  }
 `;

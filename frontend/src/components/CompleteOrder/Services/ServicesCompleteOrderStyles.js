@@ -4,6 +4,10 @@ export const Title = styled.h2`
   margin-bottom: 2rem ;
   margin-top: 100px;
 
+  @media (max-width: 900px){
+    margin-top: 20px;
+    margin-bottom: 1rem;
+  }
 `;
 
 export const OrderCard = styled.div`

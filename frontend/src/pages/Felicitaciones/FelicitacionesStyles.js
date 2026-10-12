@@ -15,19 +15,37 @@ export const FelicitacionesContainer= styled.section`
 `
 
 export const ImgWrapper = styled.div`
-    height: 100vh;
+    min-height: 100vh;
     margin: 0 auto;
     width: 100%; 
+    padding: 110px 1.5rem 3rem;
     display: flex;
     flex-direction: column;
-    justify-content:center;
+    justify-content: center;
     align-items: center; 
+    gap: 20px;
+    text-align: center;
+
+  & h2 {
+    max-width: 640px;
+    font-size: 1.6rem;
+  }
 
   & img{
-    width: 55%;
-    height:55%;
-  /* object-fit: contain;  */
+    width: min(55%, 420px);
+    height: auto;
+    /* object-fit: contain;  */
     border-radius: 10px;
+  }
+
+  @media (max-width: 560px){
+    & h2 {
+      font-size: 1.25rem;
+    }
+
+    & img {
+      width: 85%;
+    }
   }
 `;
 

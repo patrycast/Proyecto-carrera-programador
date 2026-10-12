@@ -2,7 +2,8 @@ import styled  from "styled-components";
 import { keyframes } from "styled-components";
 
 export const ServicesSection= styled.section`
-width: 1200px;
+width: 100%;
+max-width: 1200px;
 margin: 0 auto;
 padding: 0 4rem;
 
@@ -11,6 +12,14 @@ padding: 0 4rem;
     padding: 1rem;
     text-align: center; 
 
+}
+
+@media (max-width: 990px){
+    padding: 0 1.25rem;
+
+    & h2{
+        margin-top: 60px;
+    }
 }
 `;
 
@@ -23,6 +32,9 @@ display: grid;
 grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 gap: 12px;
 
+@media (max-width: 560px){
+    grid-template-columns: 1fr;
+}
 `;
 
 const fadeInUp = keyframes`
@@ -65,5 +77,9 @@ animation: ${fadeInUp} 2.3s ease-out forwards;
     height: 200px;
     object-fit: cover;
     border-radius: 9px;
+}
+
+@media (max-width: 560px){
+    padding: 1.25rem;
 }
 `;

@@ -16,6 +16,11 @@ export const ProfileContainer = styled.div`
     margin-bottom: 20px;
     font-size: 22px;
   }
+
+  @media (max-width: 768px) {
+    padding: 20px 12px;
+    min-height: auto;
+  }
 `;
 
 export const ProfileCard = styled.div`
@@ -38,6 +43,7 @@ export const ProfileCard = styled.div`
     flex-direction: column;
     align-items: flex-start;
     gap: 16px;
+    width: 100%;
   }
 `;
 
@@ -69,6 +75,16 @@ export const DataRow = styled.div`
     margin: 0;
     color: white;
     font-size: 1.1rem;
+    overflow-wrap: anywhere;
+  }
+
+  @media (max-width: 480px) {
+    padding: 16px;
+    gap: 10px;
+
+    p {
+      font-size: 0.95rem;
+    }
   }
 `;
 
@@ -118,10 +134,16 @@ export const ModalBox = styled.div`
   border: 1px solid #333;
   border-radius: 12px;
   padding: 30px;
-  width: 380px;
+  width: min(380px, 92%);
+  max-height: 90vh;
+  overflow-y: auto;
   display: flex;
   flex-direction: column;
   gap: 16px;
+
+  @media (max-width: 480px) {
+    padding: 20px;
+  }
 `;
 
 export const ModalTitle = styled.h4`

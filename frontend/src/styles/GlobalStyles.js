@@ -9,6 +9,13 @@ export const GlobalStyles= createGlobalStyle`
         text-decoration: none;
        
     }
+    html, body{
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+    img{
+        max-width: 100%;
+    }
     :root{
         --bg-color: #282726;
         --text-white: #fff; 

@@ -20,8 +20,8 @@ export const Overlay = styled.div`
     position: fixed; 
     top: 0; 
     left: 0; 
-    width: 100vw; 
-    height: 100vh; 
+    width: 100%; 
+    height: 100%; 
     background: rgba(0, 0, 0, 0.18);
     backdrop-filter: blur(4px); 
     display: flex; 
@@ -46,7 +46,7 @@ export const ModalContent= styled.div`
     position: fixed; 
     top:0; 
     right: 0px; 
-    width: 400px; 
+    width: min(400px, 100%);
     height: 100vh;
     background: #2b2b2b;
     border: 1px solid #454444; 
@@ -56,6 +56,10 @@ export const ModalContent= styled.div`
     z-index: 2000;
     animation: ${slideInRight} 0.5s ease forwards;
     overflow-y: auto;    
+
+    @media (max-width: 480px){
+        padding: 1.25rem;
+    }
 `;
 
 export const ButtonsContainer=styled.div`

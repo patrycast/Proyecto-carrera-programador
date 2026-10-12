@@ -12,10 +12,25 @@ export const HeaderContainer= styled.header`
     align-items: center;
     padding: 1rem 4rem;
     position: fixed;
-    width: 100vw;
+    top: 0;
+    left: 0;
+    width: 100%;
     height: 90px;
-    z-index: 100;
+    z-index: 1000;
 
+    @media (max-width: 990px){
+        padding: 0.75rem 1.25rem;
+    }
+`;
+
+export const HeaderActions= styled.div`
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    @media (max-width: 990px){
+        gap: 16px;
+    }
 `;
 
 export const UserContainer= styled.div`
@@ -50,6 +65,12 @@ export const DropDownMenu = styled.div`
   button:hover {
     color: #ff4d6d;
   }
+
+  @media (max-width: 990px){
+    right: 0;
+    left: 0;
+    top: 48px;
+  }
 `;
 
 export const ImgLogo= styled.img`
@@ -64,6 +85,10 @@ export const ImgLogo= styled.img`
     /* transform: rotateY(180deg); */
     transform: scale(0.9);
   }
+
+  @media (max-width: 990px){
+    height: 58px;
+  }
 `;
 
 export const UlList= styled.ul`
@@ -73,9 +98,21 @@ export const UlList= styled.ul`
     gap: 20px;
 
     @media (max-width: 990px){
-        background-color: red;
-        display: none;
-
+        display: ${({ $open }) => ($open ? "flex" : "none")};
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: flex-start;
+        gap: 6px;
+        position: fixed;
+        top: 90px;
+        left: 0;
+        width: 100%;
+        max-height: calc(100vh - 90px);
+        overflow-y: auto;
+        padding: 1.25rem;
+        background-color: #0d0d0d;
+        border-top: 1px solid #333;
+        box-shadow: 0 16px 30px rgba(0, 0, 0, 0.55);
     }
 `;
 
@@ -83,6 +120,14 @@ export const DivIcons= styled.div`
     width: 100px;
     display: flex;
     flex-direction: row;
+    align-items: center;
+
+    @media (max-width: 990px){
+        width: 100%;
+        margin-top: 10px;
+        padding-top: 10px;
+        border-top: 1px solid #333;
+    }
 `;
 
 export const LoginIcon= styled(BsPersonPlus)`
@@ -126,8 +171,10 @@ export const Menu= styled.div`
 
     @media (max-width: 990px){
         display: flex;
-        color: red;
-        font-size: 1.5rem;
+        align-items: center;
+        justify-content: center;
+        color: #ff4d6d;
+        font-size: 1.6rem;
         cursor: pointer;
     }
 

@@ -50,6 +50,7 @@ export const OrderItem = styled.div`
   display: flex;
   align-items: center;
   gap: 10px;
+  flex-wrap: wrap;
 `;
 
 export const OrderItemImg = styled.img`
@@ -64,7 +65,8 @@ export const OrderItemImg = styled.img`
 export const OrderItemInfo = styled.div`
     display: flex;
     flex-direction: column;
-    width: 50%;
+    flex: 1;
+    min-width: 120px;
   p:first-child {
     margin: 0;
     font-size: 14px;

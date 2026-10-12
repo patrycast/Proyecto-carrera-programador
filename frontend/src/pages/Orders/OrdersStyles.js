@@ -18,11 +18,15 @@ export const OrdersContainer = styled.section`
 
 export const CardsWrapper = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); 
+  grid-template-columns: repeat(auto-fit, minmax(min(400px, 100%), 1fr)); 
   justify-content: center; 
   gap: 2rem;
-  width: 40%;
+  width: 90%;
   max-width: 1200px; 
+
+  @media (min-width: 1100px){
+    width: 60%;
+  }
 `;
 
 export const CardOrders = styled.div`
@@ -52,6 +56,16 @@ export const CardOrders = styled.div`
     object-fit: cover;
     border-radius: 8px;
     margin: 0.5rem 0;
+  }
+
+  @media (max-width: 560px){
+    flex-direction: column;
+    padding: 1.25rem;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
   }
 
   h4 {

@@ -5,6 +5,11 @@ export const AdminContainer = styled.div`
   min-height: 100vh;
   background: #121212;
   color: #fff; 
+
+  @media (max-width: 900px) {
+    flex-direction: column;
+    min-height: auto;
+  }
 `;
 
 export const SidebarAdmin = styled.aside`
@@ -29,6 +34,12 @@ export const SidebarAdmin = styled.aside`
 export const MenuBtns = styled.ul`
   list-style: none;
   padding: 0;
+
+  @media (max-width: 900px) {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
 `;
 
 export const MenuItemBtn = styled.li`

@@ -8,6 +8,12 @@ export const Container = styled.div`
   color: white;
   min-height: 100vh;
   gap: 4rem;
+
+  @media (max-width: 900px){
+    flex-direction: column;
+    padding: 1.5rem 1.25rem 3rem;
+    gap: 2rem;
+  }
 `;
 
 export const Left = styled.div`
@@ -22,12 +28,20 @@ export const Title = styled.h2`
   margin-bottom: 2rem ;
   margin-top: 100px;
 
+  @media (max-width: 900px){
+    margin-top: 80px;
+  }
 `;
 
 export const FormGrid = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
+
+  @media (max-width: 560px){
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
 `;
 
 export const InputGroup = styled.div`

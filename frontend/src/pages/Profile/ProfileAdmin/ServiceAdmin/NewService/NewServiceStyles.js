@@ -19,10 +19,16 @@ export const ModalNewService = styled.div`
   border: 1px solid #333;
   border-radius: 12px;
   padding: 2rem;
-  width: 420px;
+  width: min(420px, 92%);
+  max-height: 90vh;
+  overflow-y: auto;
   display: flex;
   flex-direction: column;
   gap: 16px;
+
+  @media (max-width: 480px) {
+    padding: 1.25rem;
+  }
 `;
 
 export const ModalTitle = styled.h3`

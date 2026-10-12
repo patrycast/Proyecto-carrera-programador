@@ -6,7 +6,7 @@ export const NotFound = () => {
   return (
  
     <>
-    <img  onClick={() => navigate(-1)} style={{ marginTop: '90px' }} src={page404} alt="Página no encontrada" />
+    <img  onClick={() => navigate(-1)} style={{ marginTop: '90px', width: "100%", height: "auto", cursor: "pointer" }} src={page404} alt="Página no encontrada" />
   
     </>
   )

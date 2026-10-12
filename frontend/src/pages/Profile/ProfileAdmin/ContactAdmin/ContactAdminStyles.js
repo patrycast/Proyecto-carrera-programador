@@ -26,6 +26,8 @@ export const MessageHeader = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+  gap: 12px;
+  flex-wrap: wrap;
   margin-bottom: 12px;
 `;
 

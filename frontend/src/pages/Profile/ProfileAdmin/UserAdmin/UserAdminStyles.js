@@ -12,9 +12,18 @@ export const UsersContainer = styled.div`
   h2 {
     text-align: left;
   }
+
+  @media (max-width: 900px) {
+    padding: 10px;
+    min-height: auto;
+  }
 `;
 
-
+export const UsersTableScroll = styled.div`
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+`;
 
 export const UsersTable = styled.table`
   width: 100%;
@@ -23,6 +32,11 @@ export const UsersTable = styled.table`
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+
+  @media (max-width: 900px) {
+    min-width: 720px;
+    white-space: nowrap;
+  }
 `;
 
 export const TableHeader = styled.th`
@@ -101,8 +115,8 @@ export const EditModal = styled.div`
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   background-color: rgba(0, 0, 0, 0.7);
   backdrop-filter: blur(5px);
   display: flex;
@@ -116,12 +130,17 @@ export const ModalContent = styled.form`
   border: 1px solid #2a2a2a;
   padding: 30px;
   border-radius: 16px;
-  width: 100%;
-  max-width: 500px;
+  width: min(500px, 92%);
+  max-height: 90vh;
+  overflow-y: auto;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
   display: flex;
   flex-direction: column;
   gap: 16px;
+
+  @media (max-width: 560px) {
+    padding: 20px;
+  }
 
   h3 {
     font-size: 1.5rem;

@@ -8,6 +8,8 @@ export const ServiceAdminHeader = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
   margin-bottom: 1.5rem;
 
   h2 {
@@ -33,6 +35,20 @@ export const ServiceItem = styled.div`
 
   &:hover {
     border-color: #333;
+  }
+
+  @media (max-width: 700px) {
+    flex-wrap: wrap;
+  }
+`;
+
+export const ActionButtons = styled.div`
+  display: flex;
+  gap: 8px;
+
+  @media (max-width: 700px) {
+    width: 100%;
+    justify-content: flex-end;
   }
 `;
 
@@ -65,11 +81,6 @@ export const ServiceInfo = styled.div`
     color: #aaa;
     font-size: 14px;
   }
-`;
-
-export const ActionButtons = styled.div`
-  display: flex;
-  gap: 8px;
 `;
 
 export const EditButton = styled.button`

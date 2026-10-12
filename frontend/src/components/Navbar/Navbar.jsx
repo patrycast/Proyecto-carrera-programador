@@ -6,8 +6,7 @@ import { BsPersonPlus } from "react-icons/bs";
 import { FiMenu } from "react-icons/fi";
 import { FaUserMinus } from "react-icons/fa6";
 import { HeaderContainer, ImgLogo, UlList, DivIcons, RouterLink, Menu, UserInfo, LoginIcon, LogOutIcon,
-    UserContainer, DropDownMenu } from "./NavbarStyles"
-import  logo from "../../assets/img/logo.png"
+    UserContainer, DropDownMenu, HeaderActions } from "./NavbarStyles"
 import { IconCart } from "./IconCart/IconCart";
 import { ModalCart } from "./ModalCart/ModalCart";
 import { useSelector } from "react-redux";
@@ -27,6 +26,13 @@ export const Navbar = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const [openMenu, setOpenMenu] = useState(false);
+    const [menuOpen, setMenuOpen] = useState(false);
+
+    // cierro el menu movil y el desplegable al navegar
+    const closeMenus = () => {
+        setMenuOpen(false);
+        setOpenMenu(false);
+    };
 
 
     // firebase logout
@@ -46,15 +52,15 @@ export const Navbar = () => {
 
 
         <RouterLink as={Link} to="/">
-            <ImgLogo src={logo} alt="logo" />
+            <ImgLogo src="/logo.jpg" alt="logo" />
         </RouterLink>
 
         <nav>
-            <UlList>
-                 <RouterLink as={Link} to="/" active> <ImHome /> Home</RouterLink>
-                 <RouterLink as={Link} to="/aboutMe"> <MdOutlineSportsGymnastics /> Sobre Mí </RouterLink>
-                 <RouterLink as={Link} to="/servicios">  <LiaClipboardListSolid /> Servicios </RouterLink>
-                 <RouterLink as={Link} to="/contact"> <MdContactPhone /> Contacto </RouterLink>
+            <UlList $open={menuOpen}>
+                 <RouterLink as={Link} to="/" onClick={closeMenus}> <ImHome /> Home</RouterLink>
+                 <RouterLink as={Link} to="/aboutMe" onClick={closeMenus}> <MdOutlineSportsGymnastics /> Sobre Mí </RouterLink>
+                 <RouterLink as={Link} to="/servicios" onClick={closeMenus}>  <LiaClipboardListSolid /> Servicios </RouterLink>
+                 <RouterLink as={Link} to="/contact" onClick={closeMenus}> <MdContactPhone /> Contacto </RouterLink>
                  
 
                      <DivIcons>
@@ -74,8 +80,8 @@ export const Navbar = () => {
 
                             {openMenu && (
                             <DropDownMenu>
-                                <Link to="/profile">Mi Perfil</Link>
-                                <Link to="/orders">Mis Pedidos</Link>
+                                <Link to="/profile" onClick={closeMenus}>Mi Perfil</Link>
+                                <Link to="/orders" onClick={closeMenus}>Mis Pedidos</Link>
 
                                 <button onClick={handleLogout}>
                                 Cerrar sesión
@@ -84,23 +90,22 @@ export const Navbar = () => {
                             )}
                         </UserContainer>
                         ) : (
-                        <RouterLink as={Link} to="/login">
-                            <LoginIcon />
+                        <RouterLink as={Link} to="/login" onClick={closeMenus}>
+                            <LoginIcon /> Ingresar
                         </RouterLink>
                         )}
-                
-                    <div>
-                        <IconCart />
-                    </div>
                  </DivIcons>
 
 
             </UlList>   
         </nav>
         
-        <Menu>
-            <FiMenu />
-        </Menu>
+        <HeaderActions>
+            <IconCart />
+            <Menu onClick={() => setMenuOpen(!menuOpen)} aria-label="Abrir menú">
+                <FiMenu />
+            </Menu>
+        </HeaderActions>
     </HeaderContainer>
   )
 }

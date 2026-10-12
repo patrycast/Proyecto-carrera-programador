@@ -8,11 +8,21 @@ export const CompleteOrderContainer= styled.div`
     padding: 1rem;
     border-radius: 10px;
     display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+
+    @media (max-width: 480px){
+        flex-direction: column;
+        align-items: flex-start;
+    }
 `;
 
 export const CompleteOrderWrapper= styled.div`
     display: flex;
     flex-direction: column;
+    flex: 1;
+    min-width: 0;
 `;
 
 export const TitleStyled= styled.span`

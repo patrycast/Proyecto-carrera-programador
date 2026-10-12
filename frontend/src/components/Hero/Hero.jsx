@@ -17,7 +17,7 @@ export const Hero = () => {
         </HeroText>
 
         <HeroImg>
-            <img src={hero} alt="Hero" style={{ width: "600px", height: "auto", borderRadius: "10px", filter: "brightness(70%)", saturate: "70%" }}/>
+            <img src={hero} alt="Hero" style={{ width: "100%", maxWidth: "600px", height: "auto", borderRadius: "10px", filter: "brightness(70%)", saturate: "70%" }}/>
         </HeroImg>
     </HeroContainer>
   )

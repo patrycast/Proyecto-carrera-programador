@@ -3,7 +3,7 @@ import { collection, getDocs, doc, updateDoc, deleteDoc } from "firebase/firesto
 import { db } from "../../../../firebase/config"; 
 import { toast } from "react-toastify";
 
-import {  UsersContainer, UsersTable, TableHeader, TableRow, TableData, ActionButtonEdit, ActionButtonDelete, EditModal,
+import {  UsersContainer, UsersTableScroll, UsersTable, TableHeader, TableRow, TableData, ActionButtonEdit, ActionButtonDelete, EditModal,
    ModalContent, InputField, SelectField, ButtonGroup } from "./UserAdminStyles";
 
 
@@ -112,6 +112,7 @@ export const UserAdmin = () => {
       <h2>Administración de Usuarios</h2>
 
       
+      <UsersTableScroll>
       <UsersTable>
         <thead>
           <tr>
@@ -141,6 +142,7 @@ export const UserAdmin = () => {
           ))}
         </tbody>
       </UsersTable>
+      </UsersTableScroll>
 
       {/* Modal de Edición */}
       {isEditModalOpen && (
