@@ -1,13 +1,12 @@
 import { ButtonSubmit } from "./SubmitStyled";
 
-export const Submit = ({onSubmit}) => {
+export const Submit = ({onSubmit, children, ...props}) => {
     const handleSubmit= (e) => {
-        // e.preventDefault()
         onSubmit(e)
     }
   return (
-    <ButtonSubmit type="submit" onClick={handleSubmit}>
-        Enviar
+    <ButtonSubmit type="submit" onClick={handleSubmit} {...props}>
+        {children}
     </ButtonSubmit>
   )
 }

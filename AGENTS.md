@@ -22,6 +22,7 @@
 React 19 + Vite 8 (`@vitejs/plugin-react`, Oxc), React Router 7, Redux Toolkit + react-redux + redux-persist (persiste `cart` y `user`, clave `root`), Firebase (Auth + Firestore), styled-components, Formik + Yup, react-toastify, react-icons.
 
 ## Gotchas
+- `firebase/auth` (modular) NO exporta `validatePassword` (eso es del Admin/compat SDK). La contraseña se valida con el schema de Yup del Register.
 - `src/redux/store.js`: usa `storage: storage.default` de `redux-persist/lib/storage`.
 - Hay `console.log`/`console.error` de debug dispersos en pages (Login, Orders, CompleteOrderForm).
 - Imágenes referenciadas que git reporta borradas rompen el build; recuperar con `git restore`.

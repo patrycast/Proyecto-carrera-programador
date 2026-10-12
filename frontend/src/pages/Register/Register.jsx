@@ -9,7 +9,7 @@ import { toast } from 'react-toastify';
 import { ContainerImg } from '../Login/LoginStyles';
 
 
-import { getAuth, createUserWithEmailAndPassword, updateProfile, validatePassword  } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import  {app } from '../../firebase/config';
 import { doc, setDoc } from "firebase/firestore";
 import { db } from '../../firebase/config';
@@ -43,51 +43,12 @@ export const Register = () => {
   // })
 
 
-  //funcion de validacion
-
-  const validateFirebasePassword = async (password) => {
-    const status = await validatePassword(auth, password);
-
-  if (!status.isValid) {
-
-    if (!status.containsUppercaseLetter) {
-      toast.error("Debe contener una mayúscula");
-    }
-
-    if (!status.containsLowercaseLetter) {
-      toast.error("Debe contener una minúscula");
-    }
-
-    if (!status.containsNumericCharacter) {
-      toast.error("Debe contener un número");
-    }
-
-    if (!status.containsNonAlphanumericCharacter) {
-      toast.error("Debe contener un carácter especial");
-    }
-
-    if (!status.meetsMinPasswordLength) {
-      toast.error("Debe tener mínimo 6 caracteres");
-    }
-
-    return false;
-  }
-
-  return true;
-};
-
-
   const { handleSubmit, getFieldProps, errors, touched} = useFormik({
     initialValues: initialValues,
     validationSchema: validationSchema,
     onSubmit: async (values) => {
       
       try {
-            // validar password con Firebase
-        const isValidPassword =await validateFirebasePassword(values.password);
-        
-        if (!isValidPassword) return;
-        
         //creo usuario
         const userCredential = await createUserWithEmailAndPassword(auth, values.email, values.password);
         const user = userCredential.user;

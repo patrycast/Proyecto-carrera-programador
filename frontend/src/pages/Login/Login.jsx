@@ -41,7 +41,7 @@ export const Login = () => {
           uid: user.uid,
           email: user.email,
           displayName: user.displayName,
-          role: snap.data().role,
+          role: snap.exists() ? snap.data().role : "user",
         }));
         
         toast.success("¡Login exitoso!");
